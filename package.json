@@ -1,0 +1,13 @@
+{
+  "name":"NodeJS Chat",
+  "node":"0.6.12",
+  
+  "dependencies": {
+  	"socket.io": "*",
+  	"express": "*",
+  	"jade": "*"
+  	  },
+  "scripts": {
+  	"start": "node server.js"
+  }
+}

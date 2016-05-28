@@ -1,0 +1,67 @@
+doctype html
+html
+	head
+		title Chat
+		link(rel="stylesheet", href="style.css")
+		script(src='http://code.jquery.com/jquery-1.7.1.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js')
+		script(src="/socket.io/socket.io.js")
+		script(src="script.js")
+	body
+		div.container#main
+			div.navbar.navbar-fixed-top
+				div.navbar-inner
+					div.container
+						a.brand(href="#") Sohbet: NodeJS
+			div#chatEntries
+			div.row#entries
+				input(type='text')#messageInput
+				div.btn-group
+					button.btn#submit(data-loading-text="Gönder") Gönder
+					button.btn.dropdown-toggle(data-toggle="dropdown")
+						span.caret
+					ul.dropdown-menu
+						li
+							a#edit(href="#modalPseudo", data-toggle="modal")
+								i.icon-user
+								| Ad Değiştir
+						
+						
+			div#nbUsersDiv
+				p Sohbette
+					span#nbUsers
+					|  kişi var.
+	div.modal.fade#modalPseudo
+		div.modal-header
+			h3 İsim Gir
+		div.modal-body
+			p İsim Gir :
+			input(type='text')#pseudoInput
+			div.alert.alert-error#alertPseudo
+				| Bu İsim Kullanııyor. Başka bir tane gir.
+		div.modal-footer
+			button.btn.btn-primary#pseudoSubmit Sohbete Katıl
+	div.modal.fade#modalInfos
+		div.modal-header
+			h3 Infos
+		div.modal-body
+			p 	This application has been made with 
+				a(href="http://nodejs.org/") Node.js 
+				, 
+				a(href="http://socket.io/") Socket.io
+				, 
+				a(href="http://expressjs.com/") Express 
+				| et 
+				a(href="http://jade-lang.com/") Jade
+				| .
+			p	She use 
+				a(href="http://twitter.github.com/bootstrap/") Bootstrap 
+				| from 
+				a(href="https://twitter.com/") Twitter
+				| and
+				a(hre="http://rocha.la/jQuery-slimScroll") SlimScroll
+				| .
+			p	The source has been published on Github under MIT license.
+			p	This application has been made by 
+				a(href="http://geekuillau.me") Guillaume Besson - Geekuillaume
+				| .
